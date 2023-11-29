@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dang Ky</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+            crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="my-3 d-flex justify-content-center align-items-center">
+    <h2 class="align-items-center">Đăng Ký</h2>
+</div>
+<div class="d-flex justify-content-center align-items-center row">
+    <div class="col-4">
+        <form action="#" th:action="@{/user/addUser}" th:object="${addUser}" method="post">
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+                <label class="form-label" for="form2Example1">Email address</label>
+                <input type="email" id="form2Example1" class="form-control" th:field="*{email}"/>
+
+            </div>
+
+            <!-- Password input -->
+            <div class="form-outline mb-4">
+                <label class="form-label" for="form2Example2">Password</label>
+                <input type="password" id="form2Example2" class="form-control" th:field="*{passwordHash}"/>
+
+            </div>
+
+            <div class="form-outline mb-4">
+                <label class="form-label" >first Name</label>
+                <input type="text" class="form-control" th:field="*{firstName}"/>
+
+            </div>
+
+            <div class="form-outline mb-4">
+                <label class="form-label" >middle Name</label>
+                <input type="text" class="form-control" th:field="*{middleName}"/>
+
+            </div>
+
+            <div class="form-outline mb-4">
+                <label class="form-label" >last Name</label>
+                <input type="text" class="form-control" th:field="*{lastName}"/>
+
+            </div>
+
+            <div class="form-outline mb-4">
+                <label class="form-label" >intro</label>
+                <input type="text" class="form-control" th:field="*{intro}"/>
+            </div>
+
+
+            <!-- Submit button -->
+            <input type="submit" class="btn btn-primary btn-block mb-4" value="Sign up"/>
+            <div class="text-center">
+                <p>I have account!!! <a th:href="@{/user/login}">Back Login</a></p>
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+</html>
